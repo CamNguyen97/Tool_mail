@@ -2,7 +2,7 @@ class EmailController < ApplicationController
 
   # sample form
   def index
-   
+
   end
 
   # send email
@@ -10,7 +10,7 @@ class EmailController < ApplicationController
     to = params[:toAddress]
     subject = params[:subject]
     body = params[:body]
-    
+
     begin
       response = SendgridMailer.email(to, subject, body).deliver
       flash[:message] = "Your email was successfully sent."
@@ -22,4 +22,4 @@ class EmailController < ApplicationController
 
     redirect_to root_url
   end
-end 
+end

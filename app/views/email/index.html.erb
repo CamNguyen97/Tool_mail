@@ -1,9 +1,3 @@
-<div class="header">
-  <div class="header-top">
-    <%= image_tag("sendgrid_logo.png", :class => "logo") %>
-  </div>
-</div>
-
 <div class="container">
   <div class="form">
     <% if flash[:message] %>
@@ -11,18 +5,18 @@
         <%= flash[:message] %>
       </div>
     <% end %>
-    <%= form_tag(email_sending_path, :class => "form-horizontal") do %> 
+    <%= form_tag(email_sending_path, :class => "form-horizontal") do %>
       <div class="control-group">
         <%= label_tag(:toAddress, "To:", :class => "control-label") %>
         <div class="controls">
           <%= text_field_tag "toAddress", "#{@toAddress}", :class => "input-xxlarge" %>
-        </div>  
+        </div>
       </div>
       <div class="control-group">
         <%= label_tag(:subject, "Subject:", :class => "control-label") %>
         <div class="controls">
           <%= text_field_tag "subject", "#{@subject}", :class => "input-xxlarge" %>
-        </div>  
+        </div>
       </div>
       <div class="control-group">
         <%= label_tag(:body, "Content:", :class => "control-label") %>
